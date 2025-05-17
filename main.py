@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import io
 
+st.set_page_config(page_title="Calcolo Gradi Giorno")
+
 # Titolo dell'applicazione
 st.title("CALCOLO GRADI GIORNO")
 
