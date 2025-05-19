@@ -1,8 +1,6 @@
 import streamlit as st
 import pandas as pd
 import io
-import locale
-import datetime
 
 st.set_page_config(page_title="Calcolo Gradi Giorno")
 
