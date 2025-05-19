@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import io
+import locale
+import datetime
 
 st.set_page_config(page_title="Calcolo Gradi Giorno")
 
@@ -141,7 +143,13 @@ st.dataframe(df_filtrato[list(colonne_da_mostrare)])
 
 # Calcolo della somma totale dei Gradi Giorno
 somma_GG = df_filtrato['GG'].sum()
-st.subheader(f"Totale Gradi Giorno del periodo: {somma_GG:.1f}")
+try:
+    locale.setlocale(locale.LC_TIME, 'it_IT.UTF-8')
+except:
+    locale.setlocale(locale.LC_TIME, 'it_IT')
+
+# Formattazione delle date nel formato italiano (gg/mm/aaaa)
+st.subheader(f"Gradi Giorno dal {data_inizio.strftime('%d/%m/%Y')} al {data_fine.strftime('%d/%m/%Y')}: {somma_GG:.1f}")
 
 # ---- Visualizzazione grafico ----
 st.header("Grafico Gradi Giorno")
