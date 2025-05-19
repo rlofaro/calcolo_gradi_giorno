@@ -149,7 +149,7 @@ except:
     locale.setlocale(locale.LC_TIME, 'it_IT')
 
 # Formattazione delle date nel formato italiano (gg/mm/aaaa)
-st.subheader(f"Gradi Giorno dal {data_inizio.strftime('%d/%m/%Y')} al {data_fine.strftime('%d/%m/%Y')}: {somma_GG:.1f}")
+st.subheader(f"Gradi Giorno dal periodo: {somma_GG:.1f}")
 
 # ---- Visualizzazione grafico ----
 st.header("Grafico Gradi Giorno")
